@@ -1,0 +1,11 @@
+diff -up mutt-1.10.1/query.c.mutt-1.9.3-1_coverity_166 mutt-1.10.1/query.c
+--- mutt-1.10.1/query.c.mutt-1.9.3-1_coverity_166	2018-11-26 11:54:55.078468192 +0100
++++ mutt-1.10.1/query.c	2018-11-26 11:55:12.035710707 +0100
+@@ -443,6 +443,7 @@ static void query_menu (char *buf, size_
+ 	      }
+ 
+ 	    mutt_create_alias (NULL, naddr);
++		rfc822_free_address (&naddr);
+ 	  }
+ 	  else
+ 	  {
